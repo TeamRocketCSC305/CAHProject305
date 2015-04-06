@@ -39,7 +39,7 @@ public class MainApp extends Activity implements View.OnClickListener{
 
     // Using the following method, we will handle all screen swaps.
     public boolean onTouchEvent(MotionEvent touchevent) {
-        return false;
+    return false;
     }
 
     @Override
@@ -58,6 +58,8 @@ public class MainApp extends Activity implements View.OnClickListener{
                 viewAnimator.setDisplayedChild(0);
                 break;
 
+            case R.id.beginButton:
+                viewAnimator.setDisplayedChild(2);
 
         }
     }
