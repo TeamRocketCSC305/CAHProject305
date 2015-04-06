@@ -1,0 +1,170 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.teamrockethideout.dakky.cah.GamePlay"
+    android:id="@+id/screenHolder"
+    android:padding="0dp">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:gravity="center"
+        android:id="@+id/topSpace">
+
+        <ImageButton
+            android:layout_width="70dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/settingsButton"
+            android:layout_gravity="left"
+            android:src="@android:drawable/ic_menu_manage"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:background="@android:color/transparent"
+            android:cropToPadding="false"
+            android:padding="15dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="PlayerName"
+            android:id="@+id/textView"
+            android:textSize="32sp"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="@android:color/white" />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/imageView"
+            android:layout_gravity="right"
+            android:src="@android:drawable/ic_menu_edit"
+            android:scaleType="fitCenter"
+            android:padding="15dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topSpace"
+        android:layout_above="@+id/bottomMenuSpace">
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:id="@+id/topSpacer"
+            android:layout_below="@+id/topSpace"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_weight="1">
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:layout_gravity="center"
+            android:id="@+id/linearLayout2" >
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"></FrameLayout>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:id="@+id/blackCard"
+                android:layout_weight="3"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                android:background="#ff232323" />
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"></FrameLayout>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:id="@+id/midSpacer"
+            android:layout_above="@+id/horizontalScrollView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/blackCard"
+            android:layout_weight="2"></FrameLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:layout_gravity="center"
+            android:id="@+id/whiteSpace">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:id="@+id/prevWhite"
+                android:layout_gravity="center"
+                android:src="@android:drawable/ic_media_rew"
+                android:clickable="true"
+                android:padding="5dp"
+                android:adjustViewBounds="true"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:id="@+id/whiteCard"
+                android:clickable="true"
+                android:scaleType="fitCenter"
+                android:layout_weight="3"
+                android:layout_gravity="center"
+                android:background="@android:color/white" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:id="@+id/nextWhite"
+                android:layout_gravity="center"
+                android:src="@android:drawable/ic_media_ff"
+                android:clickable="true"
+                android:padding="5dp"
+                android:adjustViewBounds="true"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:id="@+id/bottomSpacer"
+            android:layout_above="@+id/bottomMenuSpace"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_weight="2"></FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:background="#ff232323"
+        android:id="@+id/bottomMenuSpace"></LinearLayout>
+
+</RelativeLayout>

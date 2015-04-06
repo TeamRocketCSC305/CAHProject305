@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="title_activity_intro_menu">IntroMenu</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_setup_screen">SetupScreen</string>
+    <string name="title_activity_game_play">GamePlay</string>
+    <string name="title_activity_join_screen">JoinScreen</string>
+
+</resources>
