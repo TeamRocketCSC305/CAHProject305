@@ -1,5 +1,8 @@
 # CAHProject305
 
+Hermano Arruda, Dakota Dolde, JASON WALSTAD
+
+
 We are programming in Android Studio, which runs on the Java language. This means we will be adhering to the standard Java coding conventions. In general, our code will follow these guidelines:
 
 Class, Variable, Method Name Guidelines:
