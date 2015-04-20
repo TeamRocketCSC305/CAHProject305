@@ -24,4 +24,14 @@ Comments
 •	Comments should be used sparingly to avoid overwhelming the reader, but should be descriptive enough to provide a quick overview of the code’s function 
 
 
-
+How to Install
+1: download and install android studio
+2: download and install git
+3: open android studio
+4: go to preferences>version control>GitHub
+5:Enter https://GitHub.com/TeamRocketCSC305/CAHProject305.git for the host, and your own login info for the rest
+6: choose "check out project from version control" then "git"
+7: enter https://GitHub.com/TeamRocketCSC305/CAHProject305.git as the VCS repository url and hit clone
+8: once android studio has finished that process, open the terminal tab on the bottom of android studio, and type "git remote add 305CAH https://GitHub.com/TeamRocketCSC305/CAHProject305.git" and hit enter
+9: when you want to update code you have to what is on the GitHub repository, type in "git pull 305CAH"
+10: alternatively, to update the repository with changes you have made, type "git push 305CAH"
