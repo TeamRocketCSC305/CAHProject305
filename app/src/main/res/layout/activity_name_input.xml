@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffffff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_weight="1" >
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/editText3"
+            android:background="#ff000000"
+            android:layout_below="@+id/textView4"
+            android:layout_alignParentStart="true"
+            android:layout_weight="0"
+            android:hint="Enter a name to play as"
+            android:editable="true"
+            android:enabled="true"
+            android:focusable="true" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:text="User ID"
+            android:id="@+id/textView4"
+            android:layout_gravity="center_horizontal"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:background="#ff000000"
+            android:gravity="center"
+            android:textColor="#ffffffff"
+            android:typeface="sans"
+            android:visibility="visible"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:layout_weight="0" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:text="Set Name"
+        android:id="@+id/button2"
+        android:layout_weight="0"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="#ff000000"
+        android:textColor="#ffffffff"
+        android:singleLine="true"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        android:enabled="true"
+        android:clickable="true"
+        android:focusable="true" />
+</LinearLayout>
