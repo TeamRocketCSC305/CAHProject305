@@ -1,4 +1,4 @@
-package com.teamrockethideout.dakky.cah.util;
+package com.teamrockethideout.dakky.cah;
 
 import android.annotation.TargetApi;
 import android.app.Activity;

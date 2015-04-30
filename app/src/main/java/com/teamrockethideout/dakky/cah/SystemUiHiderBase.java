@@ -1,4 +1,4 @@
-package com.teamrockethideout.dakky.cah.util;
+package com.teamrockethideout.dakky.cah;
 
 import android.app.Activity;
 import android.view.View;
