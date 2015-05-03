@@ -1,5 +1,7 @@
 package com.teamrockethideout.dakky.cah;
 
+import android.widget.Button;
+
 /**
  * Created by Jason on 4/30/15.
  */
@@ -17,13 +19,11 @@ public class GamePlay {
 
 
 
-    public void update(){}
+    //public void update(){}   we only take actions when buttons are pressed
 
     public void setCzar(Player player){}
 
-    public void paint(){}
-
-    public void actionListener(actionEvent e){}
+    //public void paint(){}   silly jason, no need for paint with XML layouts
 
     public void combineDecks(){}
 

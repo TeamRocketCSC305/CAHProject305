@@ -9,6 +9,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ViewAnimator;
 
@@ -165,6 +166,8 @@ public class MainApp extends Activity implements View.OnClickListener{
                     playerName = enteredText;
 
                     ((TextView)findViewById(R.id.playerNameDisplay)).setText(playerName);
+
+                    ((ImageView)findViewById(R.id.whiteCard)).setImageResource(R.drawable.white00001);
 
                     viewAnimator.setDisplayedChild(4);
 
