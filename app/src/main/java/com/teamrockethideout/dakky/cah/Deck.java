@@ -70,6 +70,7 @@ public class Deck {
         else
             topCard = topCard.getNext();
 
+        size --;
         return tempCard;
     }
 

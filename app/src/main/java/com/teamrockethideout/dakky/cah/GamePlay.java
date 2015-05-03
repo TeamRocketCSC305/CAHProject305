@@ -38,35 +38,13 @@ public class GamePlay {
 
     public Deck shuffle( Deck  tobeShuffled){
 
-        Card temp;
-        Card first = tobeShuffled.getFirst();
+        Card temp = tobeShuffled.takeRand();
         int deckSize = tobeShuffled.getSize();
-
-        temp = first;
-
-
-        for (int i=0 ;i < deckSize*Math.random();i++) {
-            temp = temp.getNext();
-        }
-        if(temp != first)
-            temp.getPrev().setNext(temp.getNext());
-        else
-            first = first.getNext();
-
-        deckSize--;
 
         Deck shuffled= new Deck(temp);
 
         for (int i=0;i < deckSize;){
-            temp = first;
-            for (int j=1;j < deckSize*Math.random();j++){
-                temp = temp.getNext();
-            }
-
-            if(temp != first)
-                temp.getPrev().setNext(temp.getNext());
-            else
-                first = first.getNext();
+            temp = tobeShuffled.takeRand();
 
             shuffled.addCard(temp);
 
