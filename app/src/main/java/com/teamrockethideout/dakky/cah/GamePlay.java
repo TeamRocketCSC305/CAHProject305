@@ -30,7 +30,7 @@ public class GamePlay {
     public void combineDecks(Deck first, Deck second){
         Card temp = first.getLast();
         temp.setNext(second.takeTop());
-        shuffle(first.takeTop());
+        shuffle(first);
 
     }
 
