@@ -5,24 +5,42 @@ package com.teamrockethideout.dakky.cah;
  */
 public class Deck {
 
-    private Card topCard;
+    private Card topCard,lastCard;
     private int size;
 
 
 
-    public Deck(){}
+    public Deck(Card firstCard){
+        topCard = firstCard;
+    }
 
 
 
     public void addCard(Card newCard){
-        topCard.setNext(newCard);
+
+        if (topCard == lastCard)
+            topCard.setNext(newCard);
+        else{
+            lastCard.setNext(newCard);
+            lastCard = newCard;
+        }
+
     }
 
-    public Card takeTop(){
+    public Card takeTop(){  //gets top card, and remove it from the deck
         Card tempCard = topCard;
         topCard = topCard.getNext();
 
         return tempCard;
+    }
+
+    public Card getFirst(){  //get the top card without removing it
+        return topCard;
+    }
+
+
+    public Card getLast(){  //gets the last cadwithoug removing it
+        return lastCard;
     }
 
     public Card takeRand(){

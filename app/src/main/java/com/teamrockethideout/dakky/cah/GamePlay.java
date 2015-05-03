@@ -27,14 +27,19 @@ public class GamePlay {
 
     public void actionListener(actionEvent e){}
 
-    public void combineDecks(){
+    public void combineDecks(Deck first, Deck second){
+        Card temp = first.getLast();
+        temp.setNext(second.takeTop());
+        shuffle(first.takeTop());
 
     }
 
-    public Card shuffle( Card deckHead){
+    public Deck shuffle( Deck  tobeshuffled){
 
-        Card temp = deckHead;
-        Card newhead,tail;
+        Card temp = tobeshuffled.getFirst();
+        Card first = tobeshuffled.getFirst();
+
+
         int deckSize = 1;
 
         while (temp.hasNext()){
@@ -42,39 +47,37 @@ public class GamePlay {
             deckSize ++;
         }
 
-        temp = deckHead;
+        temp = first;
 
 
         for (int i=0 ;i < deckSize*Math.random();i++) {
             temp = temp.getNext();
         }
-        if(temp != deckHead)
+        if(temp != first)
             temp.getPrev().setNext(temp.getNext());
         else
-            deckHead = deckHead.getNext();
+            first = first.getNext();
 
         deckSize--;
 
-        newhead = temp;
-        tail = temp;
+        Deck shuffled= new Deck(temp);
 
         for (int i=0;i < deckSize;){
-            temp = deckHead;
+            temp = first;
             for (int j=1;j < deckSize*Math.random();j++){
                 temp = temp.getNext();
             }
 
-            if(temp != deckHead)
+            if(temp != first)
                 temp.getPrev().setNext(temp.getNext());
             else
-                deckHead = deckHead.getNext();
+                first = first.getNext();
 
-            tail.setNext(temp);
-            tail = temp;
+            shuffled.addCard(temp);
 
             deckSize--;
         }
-        return newhead;
+        return shuffled;
     }
 
     public void deal(){}
