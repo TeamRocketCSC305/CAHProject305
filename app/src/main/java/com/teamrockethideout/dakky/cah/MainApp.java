@@ -169,6 +169,9 @@ public class MainApp extends Activity implements View.OnClickListener{
 
                     ((ImageView)findViewById(R.id.whiteCard)).setImageResource(R.drawable.white00001);
 
+                    (findViewById(R.id.whiteCard)).setBackground(null);
+                    (findViewById(R.id.whiteCard)).setEnabled(true);
+
                     viewAnimator.setDisplayedChild(4);
 
                 }
