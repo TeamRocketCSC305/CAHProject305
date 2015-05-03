@@ -9,7 +9,9 @@ public class WhiteCard extends Card {
 
 
 
-    public WhiteCard(){}
+    public WhiteCard( String id){
+        refID = id;
+    }
 
 
 

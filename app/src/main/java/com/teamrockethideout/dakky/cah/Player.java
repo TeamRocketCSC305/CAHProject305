@@ -12,7 +12,12 @@ public class Player {
 
 
 
-    public Player(){}
+    public Player( Deck hand, String name){
+        this.hand = hand;
+        nameTag = name;
+        awesomePoints = 0;
+
+    }
 
 
 

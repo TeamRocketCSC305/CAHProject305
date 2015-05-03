@@ -8,7 +8,7 @@ public class GamePlay {
     private Player self;
     private Button nextCard, prevCard;
     private Card White, nextWhite, prevWhite, Black;
-    private Deck whiteDeck, blackDeck;
+    private Deck whiteDeck, blackDeck, usedWhites, usedBlacks;
     private int timeLimit;
 
 
@@ -25,7 +25,9 @@ public class GamePlay {
 
     public void actionListener(actionEvent e){}
 
-    public void combineDecks(){}
+    public void combineDecks(){
+
+    }
 
     public void shuffle(){}
 

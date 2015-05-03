@@ -12,8 +12,19 @@ public class BlackCard extends Card {
 
 
 
-    public BlackCard(){}
+    public BlackCard(){
+        preDraw = 0;
+        refID = null;
+        reqWhites = 0;
+        multi = false;
+    }
 
+    public BlackCard(int draw, String id, int whites){
+        preDraw = draw;
+        refID = id;
+        reqWhites = whites;
+        multi = reqWhites > 1;
+    }
 
 
     public int getPreDraw(){
