@@ -10,8 +10,14 @@ public class Deck {
 
 
 
+    public Deck(){
+        topCard = null;
+        size = 0;
+    }
+
     public Deck(Card firstCard){
         topCard = firstCard;
+        size = 1;
     }
 
 
@@ -25,11 +31,15 @@ public class Deck {
             lastCard = newCard;
         }
 
+        size++;
+
     }
 
     public Card takeTop(){  //gets top card, and remove it from the deck
         Card tempCard = topCard;
         topCard = topCard.getNext();
+
+        size--;
 
         return tempCard;
     }
@@ -57,6 +67,10 @@ public class Deck {
             topCard = topCard.getNext();
 
         return tempCard;
+    }
+
+    protected int getSize(){
+        return size;
     }
 
 }

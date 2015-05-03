@@ -34,18 +34,11 @@ public class GamePlay {
 
     }
 
-    public Deck shuffle( Deck  tobeshuffled){
+    public Deck shuffle( Deck  tobeShuffled){
 
-        Card temp = tobeshuffled.getFirst();
-        Card first = tobeshuffled.getFirst();
-
-
-        int deckSize = 1;
-
-        while (temp.hasNext()){
-            temp = temp.getNext();
-            deckSize ++;
-        }
+        Card temp;
+        Card first = tobeShuffled.getFirst();
+        int deckSize = tobeShuffled.getSize();
 
         temp = first;
 

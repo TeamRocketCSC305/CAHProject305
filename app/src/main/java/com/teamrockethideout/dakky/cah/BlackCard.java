@@ -19,7 +19,7 @@ public class BlackCard extends Card {
         multi = false;
     }
 
-    public BlackCard(int draw, String id, int whites){
+    public BlackCard(String id, int draw, int whites){
         preDraw = draw;
         refID = id;
         reqWhites = whites;
