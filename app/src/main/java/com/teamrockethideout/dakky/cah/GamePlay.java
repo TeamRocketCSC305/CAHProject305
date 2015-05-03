@@ -38,22 +38,31 @@ public class GamePlay {
 
     public Deck shuffle( Deck  tobeShuffled){
 
-        Card temp = tobeShuffled.takeRand();
-        int deckSize = tobeShuffled.getSize();
+        Card temp = tobeShuffled.takeRand(); //Start by taking a random card
+        int deckSize = tobeShuffled.getSize(); //Get the size of the starting deck
 
-        Deck shuffled= new Deck(temp);
+        Deck shuffled= new Deck(temp); //Create new deck with the random card as the top
 
-        for (int i=0;i < deckSize;){
-            temp = tobeShuffled.takeRand();
+        for (int i=0;i < deckSize;){    //as long as it original deck has cards
+            temp = tobeShuffled.takeRand(); // take a random card
 
-            shuffled.addCard(temp);
+            shuffled.addCard(temp); // and add it to our new deck
 
-            deckSize--;
+            deckSize--; // then decrement our count
         }
-        return shuffled;
+        return shuffled;    // then return our shuffled deck
     }
 
-    public void deal(){}
+    public void deal(){
+        int i = self.getHand().getSize();
+        while(i>7){
+            self.getHand().addCard(whiteDeck.takeTop());
+        }
+    }
 
-    public void dealTo(Player dealtTo, int cardsDealt){}
+    public void dealTo(Player dealtTo, int cardsDealt){
+        for(int i=0;i<cardsDealt;i++){
+            dealtTo.getHand().addCard(whiteDeck.takeTop());
+        }
+    }
 }
