@@ -24,8 +24,12 @@ public class Deck {
 
     public void addCard(Card newCard){
 
-        if (topCard == lastCard)
-            topCard.setNext(newCard);
+        if(topCard == null)
+            topCard = newCard;
+        else if (topCard == lastCard){
+            lastCard = newCard;
+            topCard.setNext(lastCard);
+        }
         else{
             lastCard.setNext(newCard);
             lastCard = newCard;

@@ -27,10 +27,12 @@ public class GamePlay {
 
     public void actionListener(actionEvent e){}
 
-    public void combineDecks(Deck first, Deck second){
-        Card temp = first.getLast();
-        temp.setNext(second.takeTop());
-        shuffle(first);
+    public void combineDecks(Deck first, Deck second){  //recieves two decks to be combined
+        second = shuffle(second);        //so the second deck gets shuffled
+
+        while(second.getSize()>0){      //while there are cards in the second deck
+            first.addCard(second.takeTop());    //Take them off the top and add them to the first
+        }
 
     }
 

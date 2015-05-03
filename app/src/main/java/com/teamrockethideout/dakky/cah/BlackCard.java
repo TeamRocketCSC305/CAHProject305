@@ -12,14 +12,14 @@ public class BlackCard extends Card {
 
 
 
-    public BlackCard(){
+    public BlackCard(){ //blank useless black card
         preDraw = 0;
         refID = null;
         reqWhites = 0;
         multi = false;
     }
 
-    public BlackCard(String id, int draw, int whites){
+    public BlackCard(String id, int draw, int whites){  //an actual card we can use
         preDraw = draw;
         refID = id;
         reqWhites = whites;
