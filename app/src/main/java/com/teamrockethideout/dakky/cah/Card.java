@@ -5,7 +5,7 @@ package com.teamrockethideout.dakky.cah;
  * Card objects are essentially Nodes. This is the most convenient
  *  data structure for handling the cards in-game.
  */
-public class Card { //dakky was here! [testing stuff]
+public class Card {
 
     private Card nextCard;
     private Card prevCard;
