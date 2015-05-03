@@ -23,6 +23,10 @@ public class Card { //dakky was here! [testing stuff]
         return nextCard;
     }
 
+    public boolean hasNext(){
+        return nextCard !=null;
+    }
+
     public void setNext(Card someCard){
         nextCard = someCard;
     }
