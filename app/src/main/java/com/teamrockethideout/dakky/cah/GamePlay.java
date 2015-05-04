@@ -69,7 +69,7 @@ public class GamePlay {
 
         handSize = 7;
 
-        pass = null;
+        pass = "";
 
         gameName = "CAH";
 
@@ -104,9 +104,11 @@ public class GamePlay {
             }
 
         }
+//
+//        whiteDeck = shuffle(whiteDeck);
+//        blackDeck = shuffle(blackDeck);
 
-        whiteDeck = shuffle(whiteDeck);
-        blackDeck = shuffle(blackDeck);
+        deal();
 
     }
 

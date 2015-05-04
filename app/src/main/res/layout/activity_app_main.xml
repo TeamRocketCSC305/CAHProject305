@@ -703,7 +703,10 @@
                     android:textColor="#ffffffff"
                     android:textStyle="bold"
                     android:typeface="sans"
-                    android:textSize="20sp" />
+                    android:textSize="30sp"
+                    android:textAlignment="center"
+                    android:singleLine="true"
+                    android:gravity="center" />
             </LinearLayout>
         </RelativeLayout>
     </ViewAnimator>

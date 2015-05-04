@@ -9,6 +9,7 @@ public class Card {
 
     private Card nextCard;
     private Card prevCard;
+    private int id = 0;
 
 
     public Card(){
@@ -21,10 +22,6 @@ public class Card {
         return nextCard;
     }
 
-    public boolean hasNext(){
-        return nextCard !=null;
-    }
-
     public void setNext(Card someCard){
 
         nextCard = someCard;
@@ -34,10 +31,13 @@ public class Card {
     }
 
     public Card getPrev(){
+
         return prevCard;
     }
 
     public void setPrev(Card someCard){
         prevCard = someCard;
     }
+
+    public int getImg() { return id; }
 }

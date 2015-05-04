@@ -20,7 +20,7 @@ public class MainApp extends Activity implements View.OnClickListener{
     private float lastY;
     private boolean hostingGame;
     private String playerName;
-    private GamePlay theGame;
+    private GamePlay theGame = new GamePlay();
     private Player thisPlayer;
 
 
@@ -53,6 +53,10 @@ public class MainApp extends Activity implements View.OnClickListener{
             R.drawable.black00012, R.drawable.black00013, R.drawable.black00014,
             R.drawable.black00015};
 
+    Deck whiteDeck = new Deck();
+
+    WhiteCard current;
+
 
 
     @Override
@@ -65,6 +69,11 @@ public class MainApp extends Activity implements View.OnClickListener{
         final Animation outAnim = AnimationUtils.loadAnimation(this,android.R.anim.fade_out);
 
         hostingGame = false;
+
+        for(int i = 0; i < whites.length; i++){
+            whiteDeck.addCard(new WhiteCard(whites[i]));
+        }
+        current = (WhiteCard)whiteDeck.getFirst();
 
         viewAnimator.setInAnimation(inAnim);
         viewAnimator.setOutAnimation(outAnim);
@@ -82,8 +91,8 @@ public class MainApp extends Activity implements View.OnClickListener{
         ((Button)findViewById(R.id.cancelJoinButton)).setOnClickListener(this);
         ((Button)findViewById(R.id.beginGameButton)).setOnClickListener(this);
         ((Button)findViewById(R.id.leaveLobbyButton)).setOnClickListener(this);
-        ((Button)findViewById(R.id.nextWhite)).setOnClickListener(this);
-        ((Button)findViewById(R.id.prevWhite)).setOnClickListener(this);
+        ((ImageView)findViewById(R.id.nextWhite)).setOnClickListener(this);
+        ((ImageView)findViewById(R.id.prevWhite)).setOnClickListener(this);
     }
 
     // Using the following method, we will handle all screen swaps.
@@ -122,8 +131,6 @@ public class MainApp extends Activity implements View.OnClickListener{
 
                 hostingGame = true;
 
-                theGame.setupGame();
-
                 viewAnimator.setDisplayedChild(3);
 
                 break;
@@ -131,8 +138,6 @@ public class MainApp extends Activity implements View.OnClickListener{
             case R.id.customGameButton: //For hosting a game with settable options
 
                 hostingGame = true;
-
-                theGame.setupGame();
 
                 viewAnimator.setDisplayedChild(1);
 
@@ -147,6 +152,8 @@ public class MainApp extends Activity implements View.OnClickListener{
             case R.id.startButton:  //To submit selected options and go on to set the host player's name
 
                 viewAnimator.setDisplayedChild(3);
+
+                theGame.setupGame();
 
                 break;
 
@@ -164,9 +171,9 @@ public class MainApp extends Activity implements View.OnClickListener{
 
             case R.id.beginGameButton:  //To start a hosted game (host only), once enough players have joined
 
-//                ((ImageView)findViewById(R.id.whiteCard)).setImageResource(whites[(int)(Math.random() * 62)]);
-//
-//                ((ImageView)findViewById(R.id.blackCard)).setImageResource(blacks[(int)(Math.random() * 15)]);
+                ((ImageView)findViewById(R.id.whiteCard)).setImageResource(current.getImg());
+
+                ((ImageView)findViewById(R.id.blackCard)).setImageResource(blacks[(int)(Math.random() * 15)]);
 
                 (findViewById(R.id.whiteCard)).setBackground(null);
 
@@ -175,6 +182,8 @@ public class MainApp extends Activity implements View.OnClickListener{
                 (findViewById(R.id.blackCard)).setBackground(null);
 
                 (findViewById(R.id.blackCard)).setEnabled(true);
+
+                theGame.initiateGame();
 
                 viewAnimator.setDisplayedChild(5);
 
@@ -258,7 +267,8 @@ public class MainApp extends Activity implements View.OnClickListener{
                 else {
 
                     ((TextView)findViewById(R.id.setTextNotif)).setText("Special Characters\n" +
-                            ". , = + * - ! @ \" \' / \\\nnot allowed.");
+                            ". , = + * - ! @ \" \' / \\\nnot allowed.\n" +
+                            "No spaces either.");
 
                 }
 
@@ -267,13 +277,18 @@ public class MainApp extends Activity implements View.OnClickListener{
 
             case R.id.nextWhite:
 
-                ((ImageView)findViewById(R.id.whiteCard)).setImageResource(theGame.getSelf().cycleNext().getImg());
+                //((ImageView)findViewById(R.id.whiteCard)).setImageResource(whites[(int)(Math.random() * 62)]);
+
+                //((ImageView)findViewById(R.id.whiteCard)).setImageResource(theGame.getSelf().cycleNext().getImg());
 
                 break;
 
             case R.id.prevWhite:
 
-                ((ImageView)findViewById(R.id.whiteCard)).setImageResource(theGame.getSelf().cyclePrev().getImg());
+                //((ImageView)findViewById(R.id.whiteCard)).setImageResource(whites[(int)(Math.random() * 62)]);
+                current.getPrev()
+                ((ImageView)findViewById(R.id.whiteCard)).setImageResource(current.getImg());
+                //((ImageView)findViewById(R.id.whiteCard)).setImageResource(theGame.getSelf().cyclePrev().getImg());
 
                 break;
 
@@ -334,7 +349,7 @@ public class MainApp extends Activity implements View.OnClickListener{
 
         boolean passes = true;
 
-        String[] bannedChars = {".", ",", "=", "+", "*", "-", "!", "@", "\"", "\'", "/", "\\"};
+        String[] bannedChars = {".", ",", "=", "+", "*", "-", "!", "@", "\"", "\'", "/", "\\", " "};
 
         int charNum = 0;
 

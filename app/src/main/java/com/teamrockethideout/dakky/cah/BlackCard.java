@@ -38,7 +38,7 @@ public class BlackCard extends Card {
         return preDraw;
     }
 
-    public String getImg(){
+    public int getImg(){
         return refID;
     }
 

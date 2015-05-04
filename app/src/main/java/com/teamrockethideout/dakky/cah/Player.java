@@ -6,7 +6,7 @@ package com.teamrockethideout.dakky.cah;
 public class Player {
 
     private Deck hand;
-    private WhiteCard currentWhite;
+    private Card currentWhite;
     private String nameTag;
     private int playerID;
     private int awesomePoints;
@@ -27,6 +27,7 @@ public class Player {
     public void addToHand(Card newCard){
 
         hand.addCard(newCard);
+        System.out.println("adding");
 
     }
 
@@ -62,23 +63,31 @@ public class Player {
         isCzar = czar;
     }
 
-    public WhiteCard getCurrentWhite() { return currentWhite; }
+    public Card getCurrentWhite() { return currentWhite; }
 
     public WhiteCard cycleNext(){
 
-        if(currentWhite.getNext() != null)
+        if(currentWhite.getNext() != null) {
+
             currentWhite = currentWhite.getNext();
 
-        return currentWhite;
+            return (WhiteCard) currentWhite;
+        }
+        else
+            return (WhiteCard)currentWhite;
 
     }
 
     public WhiteCard cyclePrev(){
 
-        if(currentWhite.getPrev() != null)
+        if(currentWhite.getPrev() != null) {
+
             currentWhite = currentWhite.getPrev();
 
-        return currentWhite;
+            return (WhiteCard) currentWhite;
+        }
+        else
+            return (WhiteCard)currentWhite;
 
     }
 
