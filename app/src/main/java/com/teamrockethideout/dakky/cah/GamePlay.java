@@ -1,6 +1,6 @@
 package com.teamrockethideout.dakky.cah;
 
-// im silly,imported math when all the math i needed was done in the deck class
+// im silly,imported math when all the math i needed was done in the deck class sh
 
 import android.widget.Button;
 
