@@ -460,11 +460,15 @@
                     android:inputType="textPersonName"
                     android:text="" />
 
-                <ImageView
+                <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="0dp"
-                    android:id="@+id/cardExampleDisplay"
-                    android:layout_weight="1" />
+                    android:id="@+id/setTextNotif"
+                    android:layout_weight="1"
+                    android:textColor="#ffffffff"
+                    android:textStyle="bold"
+                    android:typeface="sans"
+                    android:textSize="30dp" />
             </LinearLayout>
 
             <Button
