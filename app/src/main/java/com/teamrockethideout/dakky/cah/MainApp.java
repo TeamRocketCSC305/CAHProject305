@@ -122,6 +122,8 @@ public class MainApp extends Activity implements View.OnClickListener{
 
                 hostingGame = true;
 
+                theGame.setupGame();
+
                 viewAnimator.setDisplayedChild(3);
 
                 break;
@@ -129,6 +131,8 @@ public class MainApp extends Activity implements View.OnClickListener{
             case R.id.customGameButton: //For hosting a game with settable options
 
                 hostingGame = true;
+
+                theGame.setupGame();
 
                 viewAnimator.setDisplayedChild(1);
 
@@ -140,7 +144,7 @@ public class MainApp extends Activity implements View.OnClickListener{
 
                 break;
 
-            case R.id.startButton:  //To submit selected options and go on to se the host player's name
+            case R.id.startButton:  //To submit selected options and go on to set the host player's name
 
                 viewAnimator.setDisplayedChild(3);
 
@@ -160,9 +164,9 @@ public class MainApp extends Activity implements View.OnClickListener{
 
             case R.id.beginGameButton:  //To start a hosted game (host only), once enough players have joined
 
-                ((ImageView)findViewById(R.id.whiteCard)).setImageResource(whites[(int)(Math.random() * 62)]);
-
-                ((ImageView)findViewById(R.id.blackCard)).setImageResource(blacks[(int)(Math.random() * 15)]);
+//                ((ImageView)findViewById(R.id.whiteCard)).setImageResource(whites[(int)(Math.random() * 62)]);
+//
+//                ((ImageView)findViewById(R.id.blackCard)).setImageResource(blacks[(int)(Math.random() * 15)]);
 
                 (findViewById(R.id.whiteCard)).setBackground(null);
 
@@ -214,7 +218,7 @@ public class MainApp extends Activity implements View.OnClickListener{
                     playerName = enteredText;
 
 
-                    thisPlayer = new Player()
+                    //thisPlayer = new Player();
 
 //                    try {
 //
@@ -263,11 +267,13 @@ public class MainApp extends Activity implements View.OnClickListener{
 
             case R.id.nextWhite:
 
-
+                ((ImageView)findViewById(R.id.whiteCard)).setImageResource(theGame.getSelf().cycleNext().getImg());
 
                 break;
 
             case R.id.prevWhite:
+
+                ((ImageView)findViewById(R.id.whiteCard)).setImageResource(theGame.getSelf().cyclePrev().getImg());
 
                 break;
 

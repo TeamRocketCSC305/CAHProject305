@@ -61,7 +61,11 @@ public class GamePlay {
 
     public void setupGame(){
 
-        players = {new Player()};
+        players = new Player[]{new Player("default1", new Deck()),
+                new Player("default2", new Deck()),
+                new Player("default3", new Deck())};
+
+        self = players[0];
 
         handSize = 7;
 
@@ -85,9 +89,6 @@ public class GamePlay {
 
         }
 
-        whiteDeck = shuffle(whiteDeck);
-        blackDeck = shuffle(blackDeck);
-
     }
 
     public void  setupGame(int maxPlayers, int handSize, String password, String gameName, boolean[] decks){
@@ -96,7 +97,20 @@ public class GamePlay {
 
     public void initiateGame(){
 
+        for(int i = 0; i < players.length; i++){
+
+            while(players[i].getHand().getSize() > 0){
+                whiteDeck.addCard(players[i].getHand().takeTop());
+            }
+
+        }
+
+        whiteDeck = shuffle(whiteDeck);
+        blackDeck = shuffle(blackDeck);
+
     }
+
+    public Player getSelf() { return self; }
 
     public Deck shuffle(Deck toBeShuffled){
 
