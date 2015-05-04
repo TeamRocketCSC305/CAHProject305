@@ -9,6 +9,7 @@ public class Player {
     private String nameTag;
     private int playerID;
     private int awesomePoints;
+    private boolean isCzar;
 
 
 
@@ -40,5 +41,10 @@ public class Player {
     public void selectWhite(){
 
     }
+    public void setCzar(boolean czar){
+        isCzar = czar;
+    }
+
+
 
 }
