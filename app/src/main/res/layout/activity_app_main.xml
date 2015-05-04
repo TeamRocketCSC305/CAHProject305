@@ -574,14 +574,18 @@
                     android:textStyle="bold"
                     android:textColor="@android:color/white" />
 
-                <ImageView
+                <TextView
                     android:layout_width="70dp"
                     android:layout_height="fill_parent"
-                    android:id="@+id/imageView"
+                    android:id="@+id/awesomePointDisplay"
                     android:layout_gravity="right"
                     android:src="@android:drawable/ic_menu_edit"
                     android:scaleType="fitCenter"
-                    android:padding="15dp" />
+                    android:padding="15dp"
+                    android:text="0"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
             </LinearLayout>
 
             <LinearLayout
@@ -641,7 +645,7 @@
                     android:id="@+id/whiteSpace" >
 
                     <ImageView
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
                         android:id="@+id/prevWhite"
                         android:layout_gravity="center"
@@ -649,7 +653,8 @@
                         android:clickable="true"
                         android:padding="5dp"
                         android:adjustViewBounds="true"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:scaleType="fitCenter" />
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -662,7 +667,7 @@
                         android:background="@android:color/white" />
 
                     <ImageView
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
                         android:id="@+id/nextWhite"
                         android:layout_gravity="center"
@@ -670,7 +675,8 @@
                         android:clickable="true"
                         android:padding="5dp"
                         android:adjustViewBounds="true"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:scaleType="fitCenter" />
                 </LinearLayout>
 
                 <FrameLayout
@@ -687,7 +693,18 @@
                 android:gravity="bottom"
                 android:layout_alignParentBottom="true"
                 android:background="#ff232323"
-                android:id="@+id/bottomMenuSpace" />
+                android:id="@+id/bottomMenuSpace" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="Judging"
+                    android:id="@+id/bottomGameText"
+                    android:textColor="#ffffffff"
+                    android:textStyle="bold"
+                    android:typeface="sans"
+                    android:textSize="20sp" />
+            </LinearLayout>
         </RelativeLayout>
     </ViewAnimator>
 

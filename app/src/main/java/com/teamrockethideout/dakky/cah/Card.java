@@ -11,12 +11,10 @@ public class Card {
     private Card prevCard;
 
 
-
     public Card(){
         nextCard = null;
         prevCard = null;
     }
-
 
 
     public Card getNext(){
@@ -28,7 +26,11 @@ public class Card {
     }
 
     public void setNext(Card someCard){
+
         nextCard = someCard;
+
+        someCard.setPrev(this);
+
     }
 
     public Card getPrev(){

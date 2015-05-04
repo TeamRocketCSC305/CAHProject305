@@ -6,7 +6,7 @@ package com.teamrockethideout.dakky.cah;
 public class BlackCard extends Card {
 
     private int preDraw;
-    private String refID;
+    private int refID;
     private int reqWhites;
     private boolean multi;
 
@@ -14,12 +14,19 @@ public class BlackCard extends Card {
 
     public BlackCard(){ //blank useless black card
         preDraw = 0;
-        refID = null;
-        reqWhites = 0;
+        refID = 0;
+        reqWhites = 1;
         multi = false;
     }
 
-    public BlackCard(String id, int draw, int whites){  //an actual card we can use
+    public BlackCard(int id){
+        preDraw = 0;
+        refID = id;
+        reqWhites = 1;
+        multi = false;
+    }
+
+    public BlackCard(int id, int draw, int whites){  //an actual card we can use
         preDraw = draw;
         refID = id;
         reqWhites = whites;

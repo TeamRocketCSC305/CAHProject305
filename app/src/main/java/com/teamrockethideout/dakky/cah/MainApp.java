@@ -21,6 +21,7 @@ public class MainApp extends Activity implements View.OnClickListener{
     private boolean hostingGame;
     private String playerName;
     private GamePlay theGame;
+    private Player thisPlayer;
 
 
     int[] whites = {R.drawable.white00001, R.drawable.white00002,
@@ -81,6 +82,8 @@ public class MainApp extends Activity implements View.OnClickListener{
         ((Button)findViewById(R.id.cancelJoinButton)).setOnClickListener(this);
         ((Button)findViewById(R.id.beginGameButton)).setOnClickListener(this);
         ((Button)findViewById(R.id.leaveLobbyButton)).setOnClickListener(this);
+        ((Button)findViewById(R.id.nextWhite)).setOnClickListener(this);
+        ((Button)findViewById(R.id.prevWhite)).setOnClickListener(this);
     }
 
     // Using the following method, we will handle all screen swaps.
@@ -157,6 +160,18 @@ public class MainApp extends Activity implements View.OnClickListener{
 
             case R.id.beginGameButton:  //To start a hosted game (host only), once enough players have joined
 
+                ((ImageView)findViewById(R.id.whiteCard)).setImageResource(whites[(int)(Math.random() * 62)]);
+
+                ((ImageView)findViewById(R.id.blackCard)).setImageResource(blacks[(int)(Math.random() * 15)]);
+
+                (findViewById(R.id.whiteCard)).setBackground(null);
+
+                (findViewById(R.id.whiteCard)).setEnabled(true);
+
+                (findViewById(R.id.blackCard)).setBackground(null);
+
+                (findViewById(R.id.blackCard)).setEnabled(true);
+
                 viewAnimator.setDisplayedChild(5);
 
                 break;
@@ -194,14 +209,12 @@ public class MainApp extends Activity implements View.OnClickListener{
 
                 String enteredText = ((EditText)findViewById(R.id.playerNameEntry)).getText().toString();
 
-                if(stringPass(enteredText)) {
+                if(stringPass(enteredText) && enteredText.length() > 0) {
 
                     playerName = enteredText;
 
-                    ((TextView)findViewById(R.id.playerNameDisplay)).setText(playerName);
 
-                    ((ImageView)findViewById(R.id.whiteCard)).setImageResource(whites[(int)(Math.random() * 62)]);
-                    ((ImageView)findViewById(R.id.blackCard)).setImageResource(blacks[(int)(Math.random() * 15)]);
+                    thisPlayer = new Player()
 
 //                    try {
 //
@@ -225,13 +238,7 @@ public class MainApp extends Activity implements View.OnClickListener{
 //
 //                    }
 
-                    (findViewById(R.id.whiteCard)).setBackground(null);
-
-                    (findViewById(R.id.whiteCard)).setEnabled(true);
-
-                    (findViewById(R.id.blackCard)).setBackground(null);
-
-                    (findViewById(R.id.blackCard)).setEnabled(true);
+                    ((TextView)findViewById(R.id.playerNameDisplay)).setText(playerName);
 
                     ((TextView)findViewById(R.id.setTextNotif)).setText(null);
 
@@ -239,12 +246,28 @@ public class MainApp extends Activity implements View.OnClickListener{
 
                 }
 
+                else if(enteredText.length() == 0){
+
+                    ((TextView)findViewById(R.id.setTextNotif)).setText("Please.\nDo enter a name.");
+                }
+
                 else {
 
-                    ((TextView)findViewById(R.id.setTextNotif)).setText("Special Characters . , = + * - ! @ \" \' / \\ not allowed.");
+                    ((TextView)findViewById(R.id.setTextNotif)).setText("Special Characters\n" +
+                            ". , = + * - ! @ \" \' / \\\nnot allowed.");
 
                 }
 
+
+                break;
+
+            case R.id.nextWhite:
+
+
+
+                break;
+
+            case R.id.prevWhite:
 
                 break;
 

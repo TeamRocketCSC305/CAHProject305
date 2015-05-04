@@ -13,14 +13,27 @@ public class Player {
 
 
 
-    public Player( Deck hand, String name){
-        this.hand = hand;
+    public Player(String name, Deck newDeck){
+
         nameTag = name;
+
         awesomePoints = 0;
+
+        hand = newDeck;
 
     }
 
+    public void addToHand(Card newCard){
 
+        hand.addCard(newCard);
+
+    }
+
+    public void newHand(Deck newHand){
+
+        hand = newHand;
+
+    }
 
     public void addPoint(){
         awesomePoints++;
@@ -38,9 +51,12 @@ public class Player {
         return nameTag;
     }
 
-    public void selectWhite(){
+    public void setName(String nameIn) { nameTag = nameIn; }
 
+    public void selectWhite(){
+        
     }
+
     public void setCzar(boolean czar){
         isCzar = czar;
     }

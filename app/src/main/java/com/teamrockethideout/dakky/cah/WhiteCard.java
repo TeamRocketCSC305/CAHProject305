@@ -5,17 +5,17 @@ package com.teamrockethideout.dakky.cah;
  */
 public class WhiteCard extends Card {
 
-    private String refID;
+    private int refID;
 
 
 
-    public WhiteCard( String id){
+    public WhiteCard(int id){
         refID = id;
     }
 
 
 
-    public String getImg(){
+    public int getImg(){
         return refID;
     }
 }

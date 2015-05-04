@@ -115,7 +115,7 @@
             android:id="@+id/whiteSpace">
 
             <ImageView
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:id="@+id/prevWhite"
                 android:layout_gravity="center"
@@ -136,7 +136,7 @@
                 android:background="@android:color/white" />
 
             <ImageView
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:id="@+id/nextWhite"
                 android:layout_gravity="center"
